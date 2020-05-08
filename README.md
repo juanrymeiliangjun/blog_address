@@ -11,3 +11,12 @@
 # Tools
 
 [Mac命令行提升效率](https://juejin.im/post/5b8f366e5188251f245260f2)
+
+
+
+# Language
+
+## C/C++/Linux/Shell
+
+[C语言中文网](http://c.biancheng.net/c/)
+
