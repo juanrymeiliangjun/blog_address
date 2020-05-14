@@ -20,3 +20,16 @@
 
 [C语言中文网](http://c.biancheng.net/c/)
 
+
+
+# BUG 解决方案
+
+## iOS
+
+### ___gxx_personality_v0", referenced from:...
+
+[原因：未导入libstdc++库](https://www.cnblogs.com/cocoajin/p/4744726.html)
+
+### ___isPlatformVersionAtLeast", referenced from:的编译错误
+
+[原因：xcode10使用了xcode11编译的库](https://ask.dcloud.net.cn/question/82853)
