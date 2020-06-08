@@ -75,3 +75,5 @@ demo中每个子模块都是以工程的方式存在，主要是为了方便开�
 [有赞组件化](https://github.com/youzan/Bifrost)
 
 [阿里组件化框架BeeHive](http://liumh.com/2018/10/11/beehive-analysis/)
+
+[iOS使用Workspace来管理多项目](https://www.jianshu.com/p/b6c59d8ed2c9)
