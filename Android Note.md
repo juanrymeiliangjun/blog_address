@@ -152,6 +152,16 @@ FragmentTransaction: 用来管理事务(add、remove、replace、commit等)
 
 #### 布局
 
+MotionLayout: 管理应用中的运动和微件动画，constraintlayout子类
+linearlayout: 线性布局
+constraintlayout: 相对布局
+
+屏障约束：辅助线，帮助设置屏障线，保证其他的控件能以此线为基准(只能是屏幕上有的控件的四边)
+
+##### 关键帧动画
+ConstraintSet 
+TransitionManager 
+
 ![layout params](./android_resource/layoutparams.png)
 
 
