@@ -323,19 +323,74 @@ ComponentName、Action、Category、Data 、Type、Extra、Flags。我们可以�
 
 #### 常用的隐式Intent
 
-![normal_intent](.android_notebook/normal_intent_skip.png)
+![normal_intent](./android_notebook/normal_intent_skip.png)
 
 参考文件：[Android 基础知识6：常用的隐式 Intent](https://juejin.im/post/5dbc0088f265da4d4b5fe5d0)
 
 #### 权限管理
 
-![权限分类](.android_notebook/android_auth.png)
+![权限分类](./android_notebook/android_auth.png)
 
 ##### 普通权限
 
 也是无感授权，用户无法修改/知晓该权限。
 比如网络权限(ACCESS_WIFI_STATE/CHANGE_NETWORK_STATE)，蓝牙权限等。。。。
-![列表](.android_notebook/auth_list.png)
+![列表](./android_notebook/auth_list.png)
+
+
+### 动画及过渡
+
+##### 属性动画和视频动画的区别
+
+视图动画系统仅提供为 View 对象添加动画效果的功能，因此，如果您想为非 对象添加动画效果，则必须实现自己的代码才能做到。视图动画系统也存在一些限制，因为它仅公开 对象的部分方面来供您添加动画效果；例如，您可以对视图的缩放和旋转添加动画效果，但无法对背景颜色这样做。
+
+视图动画系统的另一个缺点是它只会在绘制视图的位置进行修改，而不会修改实际的视图本身。例如，如果您为某个按钮添加了动画效果，使其可以在屏幕上移动，该按钮会正确绘制，但 __能够点击按钮的实际位置并不会更改__，因此您必须通过实现自己的逻辑来处理此事件。
+
+有了属性动画系统，您就可以完全摆脱这些束缚，还可以为任何对象（视图和非视图）的任何属性添加动画效果，并且实际修改的是对象本身。属性动画系统在执行动画方面也更为强健。概括地讲，您可以为要添加动画效果的属性（例如颜色、位置或大小）分配 Animator，还可以定义动画的各个方面，例如多个 Animator 的插值和同步。
+
+不过，视图动画系统的设置需要的时间较短，需要编写的代码也较少。如果视图动画可以完成您需要执行的所有操作，或者现有代码已按照您需要的方式运行，则无需使用属性动画系统。在某些用例中，也可以针对不同的情况同时使用这两种动画系统。
+
+##### 属性动画(android.animation)
+
+只关心数值变化，不关心动画本身的效果。在处理数值之后会传给view去处理，并做相应的改变。
+设置数值(初始、过渡、结束) -> 配置插值器(interpolator)、估值器(TypeEvaluator) -> 设置动画对象，并使用animator(ValueAnimator、ObjectAnimator、AnimatorSet)对象设置view的属性。如图：
+
+![属性动画流程](./android_notebook/property_animator.png)
+
+ValueAnimator: 提供动画值的改变，不绑定view
+
+![value animation](./android_notebook/value_property_animator.png)
+
+ObjectAnimator: 自动绑定对象
+
+常用属性: rotationX,rotationY,rotation,scaleX,scaleY,translationX,translationY,alpha,width,height
+
+另外还可以使用 __path__
+
+AnimatorSet: 属性动画对象
+
+__Interpolator:__ 时间插值器指定了如何根据时间计算动画中的特定值。可以简单理解为动画时速度的问题
+__TypeEvaluator:__ 评估程序负责告知属性动画系统如何计算指定属性的值。(IntEvaluator,FloatEvaluator,ArgbEvaluator,TypeEvaluator)
+
+##### 视图动画(android.view.animation)
+
+也称为补间动画(Tween Animation)，只改变view的值
+![view animation](./android_notebook/view_animation.png)
+
+
+用于更新界面的 Animator 会使动画运行的每一帧都进行额外的渲染。因此，使用资源密集型动画可能会对应用的性能产生负面影响。
+
+为界面添加动画效果所需的工作已添加到渲染管道的[动画阶段](https://developer.android.com/topic/performance/rendering/profile-gpu#at)。您可以启用 GPU 渲染模式分析并监控动画阶段，以了解您的动画是否会影响应用的性能。如需了解详情，请参阅 [GPU 渲染模式分析演示](https://developer.android.com/topic/performance/rendering/inspect-gpu-rendering#profile_rendering)。
+
+
+##### AnimationDrawable、AnimatedVectorDrawable(可绘制图形形成动画效果)
+
+AnimatedVectorDrawable: 矢量可绘制动画效果。一种无需像素化或进行模糊处理即可缩放的可绘制对象
+AnimationDrawable: 静态可绘制动画效果，需要有绘制资源。接连加载一系列可绘制资源以创建动画
+
+使用过渡添加动效
+
+![transitions_diagram](./android_notebook/transitions_diagram.png)
 
 ### Layout
 
@@ -346,7 +401,52 @@ ComponentName、Action、Category、Data 、Type、Extra、Flags。我们可以�
 ![relative layout](./android_notebook/RelativeLayout.png)
 
 
+### 绑定(ViewBinding, DataBinding)
 
+#### 视图绑定(ViewBinding)
+
+
+#### 数据绑定(DataBinding)
+
+##### 单向绑定
+
+
+##### 双向绑定
+
+DataBindingUtil.setContentView
+
+##### 事件绑定
+
+
+
+### LiveData 和 ViewModel
+
+#### LiveData
+
+LiveData 是一个可以感知 Activity 、Fragment生命周期的数据容器。当 LiveData 所持有的数据改变时，它会通知相应的界面代码进行更新。同时，LiveData 持有界面代码 Lifecycle 的引用，这意味着它会在界面代码（LifecycleOwner）的生命周期处于 started 或 resumed 时作出相应更新，而在 LifecycleOwner 被销毁时停止更新。
+
+LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期状态的应用组件观察者
+
+##### 使用LiveData
+
+创建步骤：
+
+    1、创建livedata对象，通常是在viewmodel中创建；
+    2、在fragment、activity等中创建observer用于监听其onChange
+    3、关联livedata和fragment（或activity）
+
+
+
+#### ViewModel
+
+ViewModel 将视图的数据和逻辑从具有生命周期特性的实体（如 Activity 和 Fragment）中剥离开来。直到关联的 Activity 或 Fragment 完全销毁时，ViewModel 才会随之消失，也就是说，即使在旋转屏幕导致 Fragment 被重新创建等事件中，视图数据依旧会被保留。ViewModels 不仅消除了常见的生命周期问题，而且可以帮助构建更为模块化、更方便测试的用户界面。
+
+
+### 其他
+
+#### Java Handle
+
+一般用于主线程开启子线程异步处理耗时操作，子线程做完后通过回调
 
 
 

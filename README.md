@@ -12,6 +12,7 @@
 
 [Mac命令行提升效率](https://juejin.im/post/5b8f366e5188251f245260f2)
 
+[如何提升搜索效率](https://zhuanlan.zhihu.com/p/42831312)
 
 
 # Language

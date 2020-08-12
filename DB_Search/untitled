@@ -1,0 +1,46 @@
+
+
+UI -> Login Interface -> Start Service
+
+
+space time: 0.9531090259552002		name & email
+space time: 0.793607234954834		name
+space time: 0.5883150100708008		none
+
+
+针对敏感数据搜索方案：
+
+1、针对字段每个词 md5：可行
+	优点：
+		1. 数据得到保护
+		2. 搜索速度与正常数据想近
+	缺点：
+		1. 存储数据量大；
+		2. 插入速度几乎是正常数据的2倍以上
+		3. 大小写敏感
+
+2、拆词：可行
+	优点：
+		1. 搜索速度较快，快速定位
+		2. 数据得到保护
+
+// 20000条数据 insert time
+space time: 3.998399972915649				md5
+space time: 4.037513971328735				md5
+
+space time: 3.565993785858154				md5 & des(name&email)
+
+space time: 2.39022421836853				md5(每个字符)
+
+space time: 2.709110021591187				md5(每个字符) & des(name&email)
+
+
+space time: 1.151143074035645
+
+
+// 20000条数据 select time
+搜索时间并无太大差距
+
+
+
+https://www.jianshu.com/p/bac7e59a7603
