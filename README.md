@@ -39,12 +39,20 @@
 ## C/C++/Linux/Shell
 
 [C语言中文网](http://c.biancheng.net/c/)
+[为什么这么设计系列文章](https://draveness.me/whys-the-design/)
 
+## Swift
+
+[Swift 中 GCD 的使用](https://juejin.im/post/6858126631760986126#heading-14)
 
 
 # BUG 解决方案
 
 ## iOS
+
+### XCode
+
+[iOSDeviceSupport](https://github.com/JinjunHan/iOSDeviceSupport)
 
 ### ___gxx_personality_v0", referenced from:...
 

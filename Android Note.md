@@ -41,15 +41,32 @@ service的生命周期
 单独的屏幕，控件的承载体。两个activity是通过Intent(动作view/pick/edit/M AIN和数据URI)跳转
 
 AndroidManifest.xml: 应用的启动入口，指定Activity，添加Intent-filter等。
+Intent-filter：满足一定的条件之后，就会调起该activity
 >注意：当别的应用想要吊起我们的应用，需要在指定的Activity使用android:promission，而别的应用需要在manifest中添加uses-promission标签
 
-```
+```xml
     <!-- Called App -->
     <manifest>
     <activity android:name="...."
        android:permission=”com.google.socialapp.permission.SHARE_POST”
 
     />
+
+    <!-- 当系统发送MAIN指令的时候，会调起该 activity -->
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+    <!-- 当系统发送SEND指令(发送邮件)的时候，会调起该 activity -->
+    <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <data android:type="*/*" />
+        <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+
+
     <!-- My Application -->
     <manifest>
        <uses-permission android:name="com.google.socialapp.permission.SHARE_POST" />
