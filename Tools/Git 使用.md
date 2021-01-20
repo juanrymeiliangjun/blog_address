@@ -8,6 +8,11 @@
 
 #### git rebase --onto [branch-name] [from-commit-id] ~[to-commit-id]
 
+> "git-rebase: Forward-port local commits to the updated upstream head - git doc"
+
+
+【参考】[Git分支-变基](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
+
 #### git rev-parse
 
 #### git submodule

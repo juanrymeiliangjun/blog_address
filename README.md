@@ -33,6 +33,12 @@
 
 [如何提升搜索效率](https://zhuanlan.zhihu.com/p/42831312)
 
+## 业余研究
+
+#### Python 抢购
+
+[京东抢购茅台](https://github.com/huanghyw/jd_seckill)
+
 
 # Language
 
