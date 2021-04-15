@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CameraPreviewController.h"
+#import "CameraOpenGLViewController.h"
 
 #import <GPUImage/GPUImageFramework.h>
 
@@ -40,5 +42,13 @@
     
 }
 
+- (IBAction)pushCameraVC:(id)sender {
+    
+    [self.navigationController pushViewController:[[CameraPreviewController alloc] init] animated:YES];
+}
+
+- (IBAction)pushOpenGLVC:(id)sender {
+    [self.navigationController pushViewController:[[CameraOpenGLViewController alloc] init] animated:YES];
+}
 
 @end

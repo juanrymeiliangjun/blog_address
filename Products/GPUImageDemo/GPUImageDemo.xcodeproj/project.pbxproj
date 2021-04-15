@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC51B4122625942A004F678D /* CameraOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC51B4112625942A004F678D /* CameraOpenGLViewController.m */; };
 		DC5F72532615C83900A80CB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F72522615C83900A80CB3 /* AppDelegate.m */; };
 		DC5F72562615C83900A80CB3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F72552615C83900A80CB3 /* SceneDelegate.m */; };
 		DC5F72592615C83900A80CB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F72582615C83900A80CB3 /* ViewController.m */; };
@@ -17,6 +18,7 @@
 		DC5F726F2615C8F300A80CB3 /* person.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DC5F726E2615C8F300A80CB3 /* person.jpeg */; };
 		DC5F72702615CD9B00A80CB3 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; };
 		DC5F72712615CD9B00A80CB3 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCAFD98B261C154800F5D2C1 /* CameraPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC51B4102625942A004F678D /* CameraOpenGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraOpenGLViewController.h; sourceTree = "<group>"; };
+		DC51B4112625942A004F678D /* CameraOpenGLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraOpenGLViewController.m; sourceTree = "<group>"; };
 		DC5F724E2615C83900A80CB3 /* GPUImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5F72512615C83900A80CB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC5F72522615C83900A80CB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		DC5F72632615C83B00A80CB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC5F726A2615C85A00A80CB3 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		DC5F726E2615C8F300A80CB3 /* person.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person.jpeg; sourceTree = "<group>"; };
+		DCAFD989261C154800F5D2C1 /* CameraPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraPreviewController.h; sourceTree = "<group>"; };
+		DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraPreviewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		DC5F72502615C83900A80CB3 /* GPUImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCAFD987261C150800F5D2C1 /* Camera */,
 				DC5F726C2615C8F300A80CB3 /* Resources */,
 				DC5F726A2615C85A00A80CB3 /* GPUImage.framework */,
 				DC5F72512615C83900A80CB3 /* AppDelegate.h */,
@@ -112,6 +119,25 @@
 				DC5F726E2615C8F300A80CB3 /* person.jpeg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		DCAFD987261C150800F5D2C1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DCAFD988261C151500F5D2C1 /* Capture */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		DCAFD988261C151500F5D2C1 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				DCAFD989261C154800F5D2C1 /* CameraPreviewController.h */,
+				DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */,
+				DC51B4102625942A004F678D /* CameraOpenGLViewController.h */,
+				DC51B4112625942A004F678D /* CameraOpenGLViewController.m */,
+			);
+			path = Capture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +214,10 @@
 			files = (
 				DC5F72592615C83900A80CB3 /* ViewController.m in Sources */,
 				DC5F72532615C83900A80CB3 /* AppDelegate.m in Sources */,
+				DC51B4122625942A004F678D /* CameraOpenGLViewController.m in Sources */,
 				DC5F72642615C83B00A80CB3 /* main.m in Sources */,
 				DC5F72562615C83900A80CB3 /* SceneDelegate.m in Sources */,
+				DCAFD98B261C154800F5D2C1 /* CameraPreviewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,17 +358,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G426QE9Z25;
+				DEVELOPMENT_TEAM = L9VG7Y8LCU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GPUImageDemo",
 				);
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sensetime.ar.GPUImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mei.sensetime.ar.GPUImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,17 +380,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G426QE9Z25;
+				DEVELOPMENT_TEAM = L9VG7Y8LCU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GPUImageDemo",
 				);
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sensetime.ar.GPUImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mei.sensetime.ar.GPUImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
