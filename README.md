@@ -1,6 +1,21 @@
 # blog_address
 收集日常工作中遇到过写的不错的文章链接
 
+# iOS
+
+## GPUImage
+[gpuimage-camera](http://www.lymanli.com/2019/06/15/ios-gpuimage-camera/)
+
+## OpenGL ES
+
+[OpenGL入门](http://colin1994.github.io/archives/)
+
+
+## ffmpeg
+[ffmpeg集成](https://www.jianshu.com/p/ecfbebadbe55)
+
+[ffmpeg 视频处理入门教程-沅一峰](http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
+
 # GitHub
 
 [腾讯](https://github.com/tencentyun)
@@ -32,6 +47,8 @@
 [Mac命令行提升效率](https://juejin.im/post/5b8f366e5188251f245260f2)
 
 [如何提升搜索效率](https://zhuanlan.zhihu.com/p/42831312)
+
+[iOS 屏幕旋转前世今生](https://wenxiangjiang.gitbooks.io/screenlayout/content/chapter3.html)
 
 ## 业余研究
 
