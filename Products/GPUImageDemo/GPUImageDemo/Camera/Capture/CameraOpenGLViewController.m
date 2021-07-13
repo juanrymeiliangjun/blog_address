@@ -10,8 +10,9 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <GLKit/GLKit.h>
+#import <GPUImage/GPUImageFramework.h>
 
-@interface CameraOpenGLViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface CameraOpenGLViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate, GPUImageMovieWriterDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureDevice *iDevice;
@@ -20,6 +21,9 @@
 
 @property (nonatomic, weak) UIImageView *sunIV;
 @property (nonatomic, weak) UIImageView *focusIV;
+
+@property (nonatomic, weak) UIButton *recordingBtn;
+@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 
 @end
 
@@ -34,12 +38,26 @@
     
     [self focusIV];
     [self sunIV];
+    [self recordingBtn];
     
     UITapGestureRecognizer *focusTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusTap:)];
     [self.view addGestureRecognizer:focusTap];
     
     UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureEvent:)];
     [self.view addGestureRecognizer:panGes];
+    
+    self.movieWriter = [[GPUImageMovieWriter alloc]
+                        initWithMovieURL:[[NSURL alloc] initFileURLWithPath:[NSString pathWithComponents:@[NSTemporaryDirectory(), [NSString stringWithFormat:@"%@.mp4", [NSUUID UUID]]]]]
+                        size:[UIScreen mainScreen].bounds.size
+                        fileType:@"com.apple.m4v-video"
+                        outputSettings:@{ AVVideoCodecKey : AVVideoCodecH264,
+                                          AVVideoWidthKey : @([UIScreen mainScreen].bounds.size.width),
+                                          AVVideoHeightKey : @([UIScreen mainScreen].bounds.size.height),
+                                          AVVideoCompressionPropertiesKey : @{AVVideoExpectedSourceFrameRateKey : @(30),
+                                                                              AVVideoMaxKeyFrameIntervalKey : @(30)
+                                          }
+                        }];
+    self.movieWriter.delegate = self;
 }
 
 - (void)setupGLKView {
@@ -162,6 +180,15 @@
     [self setExposure:ex];
 }
 
+#pragma mark - GPUImageMovieWriterDelegate
+- (void)movieRecordingCompleted {
+    NSLog(@"movieRecordingCompleted...");
+}
+
+- (void)movieRecordingFailedWithError:(NSError *)error {
+    NSLog(@"movieRecordingFailedWithError: %@", error);
+}
+
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
 //    if (self.glkView.context != [EAGLContext currentContext]) {
@@ -186,6 +213,18 @@
         [self.cicontext drawImage:image inRect:image.extent fromRect:image.extent];
         [self.glkView display];
     });
+    
+    [self.movieWriter processAudioBuffer:sampleBuffer];
+}
+
+- (void)clickRecordingAction:(id)sender {
+    self.recordingBtn.selected = !self.recordingBtn.isSelected;
+    
+    if (self.recordingBtn.isSelected) {
+        [self.movieWriter startRecording];
+    } else {
+        [self.movieWriter finishRecording];
+    }
 }
 
 #pragma mark - Layout
@@ -209,6 +248,19 @@
         [self.view addSubview:_focusIV];
     }
     return _focusIV;
+}
+
+- (UIButton *)recordingBtn {
+    if (!_recordingBtn) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 200, 60, 60)];
+        [btn setTitle:@"录制" forState:UIControlStateNormal];
+        [btn setTitle:@"停止" forState:UIControlStateSelected];
+        [btn addTarget:self action:@selector(clickRecordingAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _recordingBtn = btn;
+        [self.view addSubview:_recordingBtn];
+    }
+    return _recordingBtn;
 }
 
 @end

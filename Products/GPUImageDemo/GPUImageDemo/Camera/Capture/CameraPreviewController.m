@@ -46,6 +46,52 @@ float const SUN_LINE_HALF_HEIGHT = 50.0;
     }
     
     [self sunLineView];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"切换" style:UIBarButtonItemStyleDone target:self action:@selector(toggleCamera:)];
+}
+
+- (void)toggleCamera:(id)sender {
+    AVCaptureDevicePosition position = (self.iDevice.position == AVCaptureDevicePositionFront) ? AVCaptureDevicePositionBack : AVCaptureDevicePositionFront;
+    
+    NSArray<AVCaptureDeviceType> *deviceType = @[AVCaptureDeviceTypeBuiltInWideAngleCamera];
+    AVCaptureDeviceDiscoverySession *videoDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceType mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionUnspecified];
+    
+    NSArray<AVCaptureDevice *> *devices = [videoDeviceDiscoverySession devices];
+
+    AVCaptureDevice *videoDevice = nil;//= [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDevice *device in devices) {
+        if (device.position == position) {
+            videoDevice = device;
+            break;
+        }
+    }
+    
+    NSParameterAssert( videoDevice != nil );
+    self.iDevice = videoDevice;
+    
+    [_captureSession beginConfiguration];
+    
+    for (AVCaptureInput *input in self.captureSession.inputs) {
+        if ([input isKindOfClass:[AVCaptureDeviceInput class]]) {
+            [self.captureSession removeInput:input];
+        }
+    }
+    
+    AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.iDevice error:nil];
+    if ([_captureSession canAddInput:videoDeviceInput] && videoDeviceInput) {
+        [_captureSession addInput:videoDeviceInput];
+//        self.activityDeviceInput = videoDeviceInput;
+    }
+    [_captureSession commitConfiguration];
+    
+    AVCaptureConnection *_videoConnection = nil;
+    for (AVCaptureOutput *output in _captureSession.outputs) {
+        if ([output isKindOfClass:[AVCaptureVideoDataOutput class]]) {
+            _videoConnection = [output connectionWithMediaType:AVMediaTypeVideo];
+        }
+    }
+    
+    _videoConnection.videoMirrored = (self.iDevice.position == AVCaptureDevicePositionFront);
 }
 
 /**

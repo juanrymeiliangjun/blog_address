@@ -16,6 +16,105 @@
 
 [ffmpeg 视频处理入门教程-沅一峰](http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
 
+## 自动打包
+
+[shell 语法](https://www.jianshu.com/p/780cdac4e9a7)
+[打包脚本](https://www.jianshu.com/p/bc1c38486887)
+
+示例参考：
+
+```shell
+#!/bin/bash
+# Author leeway 
+
+#$0：当前Shell程序的文件名
+#dirname $0，获取当前Shell程序的路径
+#cd `dirname $0`，进入当前Shell程序的目录
+#工程绝对路径
+project_path=$(cd `dirname $0`; pwd)
+
+# 工程名
+workspace_name="StartShootingCamera"
+# target name
+project_name="startshooting"
+
+# scheme名
+scheme_name="startshooting"
+
+# 环境
+development_mode=Release
+
+# ipa路径
+project_ipa_path=/Users/meiliangjun1_vendor/Desktop/Temp/Sources/startshooting/ipa
+ 
+DATE=`date +%Y%m%d%H%M`
+#-%d_%H-%M-%S
+date_to_month="$(date "+%Y-%m")"
+SOURCEPATH=$( cd $project_path && pwd )
+ipa_path=${project_ipa_path}/${date_to_month}
+ipa_name=${scheme_name}${DATE}.ipa
+
+#获取项目版本号
+mainVersion=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" ${project_path}/${project_name}/${project_name}/Info.plist)
+mainBuild=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${project_path}/${project_name}/${project_name}/Info.plist)
+appName=$(/usr/libexec/PlistBuddy -c "Print CFBundleName" ${project_path}/${project_name}/${project_name}/Info.plist)
+
+versionString="_${mainVersion}_${mainBuild}"
+#Build文件夹路径,目前Build是放在桌面
+build_path=${ipa_path}/Build/${project_name}${versionString}${DATE}
+#导出.ipa文件所在路径，IPAs默认在桌面
+exportIpaPath=${ipa_path}/IPAs/${development_mode}/${project_name}${versionString}${DATE}
+
+# 证书信息
+exportOptionsPlistPath=${project_path}/ExportOptions.plist
+
+echo 'ipa path: '${build_path}
+echo 'exportIpaPath: '${exportIpaPath}
+
+#打包工程
+echo '/+++++++ 正在清理工程 +++++++/'
+xcodebuild \
+-workspace ${project_path}/${workspace_name}.xcworkspace \
+-scheme ${scheme_name} \
+clean -configuration ${development_mode} -quiet  || exit
+echo '/+++++++ 清理完成 +++++++/'
+
+echo '正在编译工程:'${development_mode}
+xcodebuild \
+archive -workspace ${project_path}/${workspace_name}.xcworkspace \
+-scheme ${scheme_name} \
+-configuration ${development_mode} \
+-archivePath ${build_path}/${workspace_name}.xcarchive  -quiet  || exit
+echo '/+++++++ 编译完成 +++++++/'
+
+echo '/+++++++ 开始ipa打包 +++++++/'
+xcodebuild -exportArchive -archivePath ${build_path}/${workspace_name}.xcarchive \
+-configuration ${development_mode} \
+-exportPath ${exportIpaPath} \
+-exportOptionsPlist ${exportOptionsPlistPath} \
+-quiet || exit
+# 判断IPAs内是否有ipa包
+if [ -e $exportIpaPath/${appName}.ipa ]; then
+echo '/+++++++ ipa包已导出 +++++++/'
+open $exportIpaPath
+else
+echo '/+++++++ ipa包导出失败 +++++++/'
+fi
+ 
+#自动上传到蒲公英
+PGYUSERKEY=b128ddd2f6941f0d386768c2c5cb8cfa
+PGYAPIKEY=796970476f80701e41c4493b58d35ec7
+
+curl -F "file=@$exportIpaPath/${appName}.ipa" \
+-F "uKey=$PGYUSERKEY" \
+-F "_api_key=$PGYAPIKEY" \
+https://qiniu-storage.pgyer.com/apiv1/app/upload
+#-F "password=sensetime2021" \
+
+```
+
+
+
 # GitHub
 
 [腾讯](https://github.com/tencentyun)
@@ -97,3 +196,4 @@
 ### ___isPlatformVersionAtLeast", referenced from:的编译错误
 
 [原因：xcode10使用了xcode11编译的库](https://ask.dcloud.net.cn/question/82853)
+

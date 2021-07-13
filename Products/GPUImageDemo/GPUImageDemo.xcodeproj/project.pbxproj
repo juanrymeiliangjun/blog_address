@@ -16,19 +16,26 @@
 		DC5F72612615C83B00A80CB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5F725F2615C83B00A80CB3 /* LaunchScreen.storyboard */; };
 		DC5F72642615C83B00A80CB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F72632615C83B00A80CB3 /* main.m */; };
 		DC5F726F2615C8F300A80CB3 /* person.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DC5F726E2615C8F300A80CB3 /* person.jpeg */; };
-		DC5F72702615CD9B00A80CB3 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; };
-		DC5F72712615CD9B00A80CB3 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCAFD98B261C154800F5D2C1 /* CameraPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */; };
+		DCF4C460262EE0E700A6D602 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; };
+		DCF4C461262EE0E700A6D602 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC5F726A2615C85A00A80CB3 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCF4C4E32631659600A6D602 /* CameraOpenGLRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4E22631659600A6D602 /* CameraOpenGLRenderViewController.m */; };
+		DCF4C4F7263275EA00A6D602 /* RosyWriterCapturePipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4EA263275EA00A6D602 /* RosyWriterCapturePipeline.m */; };
+		DCF4C4F8263275EA00A6D602 /* RosyWriterOpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4EC263275EA00A6D602 /* RosyWriterOpenGLRenderer.m */; };
+		DCF4C4F9263275EA00A6D602 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4EE263275EA00A6D602 /* OpenGLPixelBufferView.m */; };
+		DCF4C4FA263275EA00A6D602 /* MovieRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4EF263275EA00A6D602 /* MovieRecorder.m */; };
+		DCF4C4FB263275EA00A6D602 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4F2263275EA00A6D602 /* ShaderUtilities.c */; };
+		DCF4C4FC263275EA00A6D602 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C4F4263275EA00A6D602 /* matrix.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DC5F72722615CD9B00A80CB3 /* Embed Frameworks */ = {
+		DCF4C462262EE0E700A6D602 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC5F72712615CD9B00A80CB3 /* GPUImage.framework in Embed Frameworks */,
+				DCF4C461262EE0E700A6D602 /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +61,21 @@
 		DC5F726E2615C8F300A80CB3 /* person.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person.jpeg; sourceTree = "<group>"; };
 		DCAFD989261C154800F5D2C1 /* CameraPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraPreviewController.h; sourceTree = "<group>"; };
 		DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraPreviewController.m; sourceTree = "<group>"; };
+		DCF4C4E12631659600A6D602 /* CameraOpenGLRenderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraOpenGLRenderViewController.h; sourceTree = "<group>"; };
+		DCF4C4E22631659600A6D602 /* CameraOpenGLRenderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraOpenGLRenderViewController.m; sourceTree = "<group>"; };
+		DCF4C4E8263275EA00A6D602 /* RosyWriterOpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterOpenGLRenderer.h; sourceTree = "<group>"; };
+		DCF4C4E9263275EA00A6D602 /* RosyWriterCapturePipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterCapturePipeline.h; sourceTree = "<group>"; };
+		DCF4C4EA263275EA00A6D602 /* RosyWriterCapturePipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosyWriterCapturePipeline.m; sourceTree = "<group>"; };
+		DCF4C4EB263275EA00A6D602 /* RosyWriterRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterRenderer.h; sourceTree = "<group>"; };
+		DCF4C4EC263275EA00A6D602 /* RosyWriterOpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosyWriterOpenGLRenderer.m; sourceTree = "<group>"; };
+		DCF4C4EE263275EA00A6D602 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
+		DCF4C4EF263275EA00A6D602 /* MovieRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieRecorder.m; sourceTree = "<group>"; };
+		DCF4C4F0263275EA00A6D602 /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
+		DCF4C4F2263275EA00A6D602 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		DCF4C4F3263275EA00A6D602 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		DCF4C4F4263275EA00A6D602 /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
+		DCF4C4F5263275EA00A6D602 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		DCF4C4F6263275EA00A6D602 /* MovieRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieRecorder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC5F72702615CD9B00A80CB3 /* GPUImage.framework in Frameworks */,
+				DCF4C460262EE0E700A6D602 /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +154,51 @@
 		DCAFD988261C151500F5D2C1 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				DCF4C4E4263165B200A6D602 /* Vendor */,
 				DCAFD989261C154800F5D2C1 /* CameraPreviewController.h */,
 				DCAFD98A261C154800F5D2C1 /* CameraPreviewController.m */,
 				DC51B4102625942A004F678D /* CameraOpenGLViewController.h */,
 				DC51B4112625942A004F678D /* CameraOpenGLViewController.m */,
+				DCF4C4E12631659600A6D602 /* CameraOpenGLRenderViewController.h */,
+				DCF4C4E22631659600A6D602 /* CameraOpenGLRenderViewController.m */,
 			);
 			path = Capture;
+			sourceTree = "<group>";
+		};
+		DCF4C4E4263165B200A6D602 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4C4E9263275EA00A6D602 /* RosyWriterCapturePipeline.h */,
+				DCF4C4EA263275EA00A6D602 /* RosyWriterCapturePipeline.m */,
+				DCF4C4E8263275EA00A6D602 /* RosyWriterOpenGLRenderer.h */,
+				DCF4C4EC263275EA00A6D602 /* RosyWriterOpenGLRenderer.m */,
+				DCF4C4EB263275EA00A6D602 /* RosyWriterRenderer.h */,
+				DCF4C4ED263275EA00A6D602 /* Utilities */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		DCF4C4ED263275EA00A6D602 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4C4EE263275EA00A6D602 /* OpenGLPixelBufferView.m */,
+				DCF4C4EF263275EA00A6D602 /* MovieRecorder.m */,
+				DCF4C4F0263275EA00A6D602 /* OpenGLPixelBufferView.h */,
+				DCF4C4F1263275EA00A6D602 /* GL */,
+				DCF4C4F6263275EA00A6D602 /* MovieRecorder.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DCF4C4F1263275EA00A6D602 /* GL */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4C4F2263275EA00A6D602 /* ShaderUtilities.c */,
+				DCF4C4F3263275EA00A6D602 /* matrix.h */,
+				DCF4C4F4263275EA00A6D602 /* matrix.c */,
+				DCF4C4F5263275EA00A6D602 /* ShaderUtilities.h */,
+			);
+			path = GL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +211,7 @@
 				DC5F724A2615C83900A80CB3 /* Sources */,
 				DC5F724B2615C83900A80CB3 /* Frameworks */,
 				DC5F724C2615C83900A80CB3 /* Resources */,
-				DC5F72722615CD9B00A80CB3 /* Embed Frameworks */,
+				DCF4C462262EE0E700A6D602 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,7 +228,7 @@
 		DC5F72462615C83900A80CB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = meiliangjun1_vendor;
 				TargetAttributes = {
 					DC5F724D2615C83900A80CB3 = {
@@ -213,11 +274,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5F72592615C83900A80CB3 /* ViewController.m in Sources */,
+				DCF4C4E32631659600A6D602 /* CameraOpenGLRenderViewController.m in Sources */,
+				DCF4C4F7263275EA00A6D602 /* RosyWriterCapturePipeline.m in Sources */,
 				DC5F72532615C83900A80CB3 /* AppDelegate.m in Sources */,
+				DCF4C4F9263275EA00A6D602 /* OpenGLPixelBufferView.m in Sources */,
+				DCF4C4FB263275EA00A6D602 /* ShaderUtilities.c in Sources */,
 				DC51B4122625942A004F678D /* CameraOpenGLViewController.m in Sources */,
+				DCF4C4FA263275EA00A6D602 /* MovieRecorder.m in Sources */,
+				DCF4C4F8263275EA00A6D602 /* RosyWriterOpenGLRenderer.m in Sources */,
 				DC5F72642615C83B00A80CB3 /* main.m in Sources */,
 				DC5F72562615C83900A80CB3 /* SceneDelegate.m in Sources */,
 				DCAFD98B261C154800F5D2C1 /* CameraPreviewController.m in Sources */,
+				DCF4C4FC263275EA00A6D602 /* matrix.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +337,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -327,6 +396,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -372,6 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mei.sensetime.ar.GPUImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -394,6 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mei.sensetime.ar.GPUImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
