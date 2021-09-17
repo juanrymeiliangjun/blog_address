@@ -1,10 +1,66 @@
 # blog_address
 收集日常工作中遇到过写的不错的文章链接
 
+# 前沿
+
+[GMTC](https://gmtc.infoq.cn/)
+
+
+
+# 音视频
+
+## H264编码原理
+
+[H264编码原理浅析](https://zhuanlan.zhihu.com/p/158392753)
+
+
+
 # iOS
+
+[iOS 编程规范](https://alexcode2.gitbook.io/ios-development-guidelines/)
+
+[马蜂窝技术博客](https://my.oschina.net/u/4084220?tab=newest&catalogId=0)
+
+[面试题](https://hit-alibaba.github.io/interview/)
+
+[iOS中高级面试](https://blog.csdn.net/u014600626/article/details/102923706)
+
+[OpenGL 面试](https://www.zybuluo.com/cxm-2016/note/536179)
+
+
+
+## App优化
+
+### 内存优化
+
+[ios-crash-dump-analysis-book](https://faisalmemon.github.io/ios-crash-dump-analysis-book/zh/)
+
+[memgraph使用](http://www.yuezyevil.com/2021/01/14/iOS%20%E5%86%85%E5%AD%98%E8%B0%83%E8%AF%95%E7%AF%87%20%E2%80%94%E2%80%94%20memgraph/)
+
+## UIKit
+
+### CollectionView
+
+[自定义FlowLayout](https://github.com/Tuberose621/-CollectionViewLayout-CollectionViewFlowLayout-)
+
+## 单元测试
+
+[XCTest单元测试](https://www.jianshu.com/p/81b10745044b)
+
+## AVFoundation
+
+[iOS音视频 - 掘金](https://juejin.cn/post/6844904115416334350)
+
+## Documents
+
+[苹果示例代码文档](https://developer.apple.com/library/archive/navigation/)
 
 ## GPUImage
 [gpuimage-camera](http://www.lymanli.com/2019/06/15/ios-gpuimage-camera/)
+
+[实际应用](https://blog.hudongdong.com/ios/539.html)
+
+[GPUImage源码分析 -- 原理](https://www.shuzhiduo.com/A/6pdDAPVKzw/)
 
 ## OpenGL ES
 
