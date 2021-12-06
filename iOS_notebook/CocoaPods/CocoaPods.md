@@ -45,3 +45,8 @@ https://pewpewthespells.com/blog/buildsettings.html#valid_archs
 ##### 修改文件:
 
 ![修改前](./validator-before.png)	![修改后](./validator-after.png)
+
+[参考文章:解决pod lib lint repo push不支持i386编译&只能真机运行的库](https://juejin.cn/post/6844904046290026510)
+
+
+
