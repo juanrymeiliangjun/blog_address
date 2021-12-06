@@ -27,7 +27,9 @@
 
 [OpenGL 面试](https://www.zybuluo.com/cxm-2016/note/536179)
 
+## CoreAnimation
 
+[ios动画](https://www.cnblogs.com/fshmjl/p/8477756.html)
 
 ## App优化
 
@@ -36,6 +38,8 @@
 [ios-crash-dump-analysis-book](https://faisalmemon.github.io/ios-crash-dump-analysis-book/zh/)
 
 [memgraph使用](http://www.yuezyevil.com/2021/01/14/iOS%20%E5%86%85%E5%AD%98%E8%B0%83%E8%AF%95%E7%AF%87%20%E2%80%94%E2%80%94%20memgraph/)
+
+[全平台硬件解码渲染方法与优化实践](https://www.pianshen.com/article/863064049/)
 
 ## UIKit
 
