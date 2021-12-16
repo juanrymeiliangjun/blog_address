@@ -8,6 +8,10 @@ command：https://cocoapods.org/
 
 ## 二、制作私有库
 
+https://www.jianshu.com/p/5b52b49d2392
+
+https://www.jianshu.com/p/46e305db873a
+
 
 
 ## 三、为xcode配置pod文件
