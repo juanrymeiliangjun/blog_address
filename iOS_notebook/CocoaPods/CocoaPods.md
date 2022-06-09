@@ -52,5 +52,23 @@ https://pewpewthespells.com/blog/buildsettings.html#valid_archs
 
 [参考文章:解决pod lib lint repo push不支持i386编译&只能真机运行的库](https://juejin.cn/post/6844904046290026510)
 
+### cocoapods push引用源问题 - [!] Found multiple specifications
 
+#### 现象：
+
+```
+[!] Found multiple specifications for `MJExtension (2.3.5)`: - /Users/meiliangjun1_vendor/.cocoapods/repos/cocoapods/Specs/8/a/b/MJExtension/2.3.5/MJExtension.podspec.json - /Users/meiliangjun1_vendor/.cocoapods/repos/trunk/Specs/8/a/b/MJExtension/2.3.5/MJExtension.podspec.json
+```
+
+原因：
+
+cocoapods 1.8以上版本默认使用`cdn` trunk源，但国内无法访问，所以需要指定源。remove trunk无法生效，执行`pod repo push xxx xxx.podspec`时会再次添加
+
+#### 解决方法
+
+在指令后面添加 `-sources='git@github.com:CocoaPods/Specs.git'`
+
+#### 参考
+
+[关于`[!] Found multiple specifications`类问题的产生和处理方法](https://www.jianshu.com/p/c3d66998e0c7)
 
