@@ -78,6 +78,25 @@
 
 [ffmpeg 视频处理入门教程-沅一峰](http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
 
+## Code
+
+[获取Wi-Fi信息](https://betterprogramming.pub/wifi-permission-changes-for-ios-12-1-iphone-x-and-other-devices-c313e24f90ae):
+
+```objective-c
++ (NSDictionary *)wifiInfo {
+    NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    NSLog(@"interfaces:%@",ifs);
+    NSDictionary *info = nil;
+    for (NSString *ifname in ifs) {
+        info = (__bridge_transfer NSDictionary *)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifname);
+        NSLog(@"%@ => %@",ifname,info);
+    }
+    return info;
+}
+```
+
+
+
 ## 自动打包
 
 [shell 语法](https://www.jianshu.com/p/780cdac4e9a7)
@@ -228,6 +247,8 @@ https://qiniu-storage.pgyer.com/apiv1/app/upload
 [iOS微信内存监控](https://wetest.qq.com/lab/view/367.html)
 
 [iOS Crash Dump Analysis - 2](https://faisalmemon.github.io/ios-crash-dump-analysis-book/zh/)
+
+[CocoaDebug的使用](https://github.com/CocoaDebug/CocoaDebug/wiki/Integration-Guide)
 
 # Language
 
