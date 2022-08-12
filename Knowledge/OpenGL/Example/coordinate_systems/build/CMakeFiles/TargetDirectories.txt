@@ -1,0 +1,3 @@
+/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/coordinate_systems/build/CMakeFiles/rebuild_cache.dir
+/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/coordinate_systems/build/CMakeFiles/edit_cache.dir
+/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/coordinate_systems/build/CMakeFiles/texture.dir
