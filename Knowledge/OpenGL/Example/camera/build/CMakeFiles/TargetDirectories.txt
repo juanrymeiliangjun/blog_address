@@ -1,3 +1,0 @@
-/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/camera/build/CMakeFiles/rebuild_cache.dir
-/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/camera/build/CMakeFiles/edit_cache.dir
-/Users/meiliangjun1_vendor/Desktop/Demos/Study/OpenGL/glfw/camera/build/CMakeFiles/texture.dir

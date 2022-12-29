@@ -45,9 +45,3 @@ void main() {
 [ae to json](https://github.com/Jam3/ae-to-json)
 
 [百家号基于AE生成特效](https://youle.zhipin.com/articles/9906125bcd554eeaqxB73Nq-Eg~~.html)
-
-
-
-### 数学
-
-[可汗学院](https://www.khanacademy.org/math/geometry-home/right-triangles-topic/intro-to-the-trig-ratios-geo/v/basic-trigonometry)

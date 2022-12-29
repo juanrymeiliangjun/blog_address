@@ -12,6 +12,12 @@ cpp文件构建工具。有系列工具：cmake(软件构建工具)、ctest(测�
 
 ## 流程/原理
 
+#### 使用流程
+
+1. 编写CMake配置文件CMakeLists.txt。
+2. 执行命令 `cmake PATH` 生成 Makefile，其中 `PATH` 是CMakeLists.txt所在的目录
+3. 使用`make`命令进行编译。
+
 两步：配置、生成
 
 ![flow](cmake_flow.png)
@@ -20,7 +26,7 @@ CMakeCache.txt：外部(External)、内部(Internal)输入变量(Cache Entries)
 
 #### 生成流程
 
-![generate_flow](cmake_generate_flow.png)
+![ ](cmake_generate_flow.png)
 
 ## CMakeLists.txt编写
 
@@ -166,3 +172,8 @@ install(TARGETS ${PROJECT_NAME}
 install (FILES ${HEADERS} DESTINATION include)
 ```
 
+
+
+## 参考文档
+
+[CMake入门实战](https://www.hahack.com/codes/cmake/)
