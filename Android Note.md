@@ -1,4 +1,4 @@
-#Android Note
+# Android Note
 
 快捷键：command+> 收缩/展开代码块
 
@@ -180,7 +180,6 @@ ConstraintSet
 TransitionManager 
 
 ![layout params](./android_resource/layoutparams.png)
-
 
 
 
